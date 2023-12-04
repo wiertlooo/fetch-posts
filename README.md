@@ -13,3 +13,6 @@
 
 2. **Better Understanding of react-router-dom:**
    - Explore and implement features of `react-router-dom` for efficient navigation and routing within the application.
+
+## Author: 
+- Wiktor Matulewicz
