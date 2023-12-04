@@ -1,11 +1,19 @@
-import { useFetchAuthorQuery } from "../store";
+import { useState } from "react";
+import PostDetails from "./PostDetails";
+import { Link } from "react-router-dom";
 
 function PostItem({ post }) {
-  const { data, error, isFetching } = useFetchAuthorQuery(post.userId);
+  const [showDetails, setShowDetails] = useState(false);
+
+  const handleShowDetails = () => {
+    setShowDetails(!showDetails);
+  };
+
   return (
     <div>
-      <div>{data && data.name}</div>
-      <div>{post.title}</div>
+      <Link to={`/posts/${post.id}`}>Show post details</Link>
+      <h3>{post.title}</h3>
+      <br />
     </div>
   );
 }
