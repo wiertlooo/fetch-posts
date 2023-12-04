@@ -9,7 +9,7 @@ function AuthorDetails({ userId }) {
   if (isFetching) {
     return <div>Loading details about user...</div>;
   }
-  return <div>Author:{data.name}</div>;
+  return <h2 className="py-2 px-2">Author: {data.name}</h2>;
 }
 
 export default AuthorDetails;

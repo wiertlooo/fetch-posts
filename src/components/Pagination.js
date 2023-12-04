@@ -5,12 +5,14 @@ function Pagination({ numberOfPages, setPage }) {
 
   for (let i = 1; i <= numberOfPages; i++) {
     pages.push(
-      <button key={i} onClick={() => setPage(i)}>
-        {i}
-      </button>
+      <li key={i} className="page-item">
+        <button className="page-link" onClick={() => setPage(i)}>
+          {i}
+        </button>
+      </li>
     );
   }
-  return <div>{pages}</div>;
+  return <>{pages}</>;
 }
 
 export default Pagination;

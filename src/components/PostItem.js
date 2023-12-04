@@ -1,19 +1,14 @@
-import { useState } from "react";
-import PostDetails from "./PostDetails";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function PostItem({ post }) {
-  const [showDetails, setShowDetails] = useState(false);
-
-  const handleShowDetails = () => {
-    setShowDetails(!showDetails);
-  };
+  const navigate = useNavigate();
 
   return (
-    <div>
-      <Link to={`/posts/${post.id}`}>Show post details</Link>
-      <h3>{post.title}</h3>
-      <br />
+    <div
+      style={{ cursor: "pointer" }}
+      onClick={() => navigate(`/posts/${post.id}`)}
+    >
+      <h2 className="pe-none py-1">{post.title}</h2>
     </div>
   );
 }

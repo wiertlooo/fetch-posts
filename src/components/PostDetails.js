@@ -11,21 +11,15 @@ function PostDetails() {
     error: postError,
   } = useFetchPostQuery(postId);
 
-  useEffect(() => {
-    if (postError) {
-      console.error("post: ", postError);
-    }
-  }, [postError]);
-
   if (postFetching) {
     return <div>Loading...</div>;
   }
 
   return (
     <div>
-      <h2>Post details for {postId}</h2>
+      <h1 className="py-2 px-2">{post.title}</h1>
       <AuthorDetails userId={post.userId} />
-      {post && <div>{post.body}</div>}
+      {post && <h5 className="py-3 px-2">{post.body}</h5>}
     </div>
   );
 }

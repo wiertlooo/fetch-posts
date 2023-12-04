@@ -22,9 +22,9 @@ function PostList() {
     console.log(data.length);
     content = postsOnPage.map((post) => {
       return (
-        <div key={post.id}>
+        <li className="list-group-item" key={post.id}>
           <PostItem post={post} />
-        </div>
+        </li>
       );
     });
     pagination = (
@@ -37,8 +37,17 @@ function PostList() {
 
   return (
     <div>
-      <div>{content}</div>
-      <div>{pagination}</div>
+      <ul className="list-group list-group-flush py-2 flex-grow-1">
+        {content}
+      </ul>
+      <nav
+        aria-label="Page navigation"
+        className="navbar fixed-bottom navbar-light bg-light w-100"
+      >
+        <div className="container d-flex justify-content-center">
+          <ul className="pagination mx-auto">{pagination}</ul>
+        </div>
+      </nav>
     </div>
   );
 }
