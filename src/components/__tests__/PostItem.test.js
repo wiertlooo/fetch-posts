@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import PostItem from "../PostItem";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { createMemoryHistory } from "history";
