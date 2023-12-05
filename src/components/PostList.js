@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { useFetchPostsQuery } from "../store";
 import PostItem from "./PostItem";
 import Pagination from "./Pagination";
+import { useNavigate } from "react-router-dom";
 
 function PostList() {
   const { data, error, isFetching } = useFetchPostsQuery();
-  const [page, setPage] = useState(10);
+  const [page, setPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(10);
+  const navigate = useNavigate();
 
   const lastPostIndex = page * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
@@ -23,7 +25,7 @@ function PostList() {
     content = postsOnPage.map((post) => {
       return (
         <li className="list-group-item" key={post.id}>
-          <PostItem post={post} />
+          <PostItem post={post} navigate={navigate} />
         </li>
       );
     });

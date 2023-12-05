@@ -1,10 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import React from "react";
 
-function PostItem({ post }) {
-  const navigate = useNavigate();
-
+function PostItem({ post, navigate }) {
   return (
     <div
+      data-testid="1"
       style={{ cursor: "pointer" }}
       onClick={() => navigate(`/posts/${post.id}`)}
     >
